@@ -1,7 +1,7 @@
 import wfdb
 import pandas as pd
 
-def load_ecg_files(dat_path):
+def load_ecg_files(base_path):
     '''
     Loading data from .dat, .hea files
     
@@ -13,8 +13,8 @@ def load_ecg_files(dat_path):
     '''
     
     # Load the record and annotation using the base path
-    record = wfdb.rdrecord(dat_path)
-    annotations = wfdb.rdann(dat_path, ext='atr')
+    record = wfdb.rdrecord(base_path)
+    annotations = wfdb.rdann(base_path, ext='atr')
     
     return record, annotations
 
